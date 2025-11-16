@@ -2,9 +2,9 @@
 {
     public string Nome { get; set; }
     public int Idade { get; set; }
-    public string Curso { get; set; }
+    public Curso Curso { get; set; }
 
-    public Aluno(string nome, int idade, string curso)
+    public Aluno(string nome, int idade, Curso curso)
     {
         Nome = nome;
         Idade = idade;
@@ -13,6 +13,6 @@
 
     public void ExibirInformacoes()
     {
-        Console.WriteLine($"Nome: {Nome}, Idade: {Idade}, Curso: {Curso}");
+        Console.WriteLine($"Nome: {Nome}, Idade: {Idade}, Curso: {Curso.Nome}");
     }
 }

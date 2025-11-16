@@ -22,6 +22,10 @@
     public void MatricularAluno(Aluno aluno)
     {
         alunos.Add(aluno);
+        foreach (var disciplina in disciplinas)
+        {
+            disciplina.MatricularAluno(aluno);
+        }
     }
 
     public void DesignarProfessor(Professor professor)
