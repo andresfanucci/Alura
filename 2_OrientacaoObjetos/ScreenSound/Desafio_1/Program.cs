@@ -1,6 +1,5 @@
-﻿Conta conta = new Conta();
-Titular titular = new Titular("Ana Silva", "123.456.789-00");
-conta.NovaConta(titular);
+﻿Titular titular = new Titular("Ana Silva", "123.456.789-00", "");
+Conta conta = new Conta(titular);
 Console.WriteLine(conta.Informacoes);
 
 Console.WriteLine("=======================================================");

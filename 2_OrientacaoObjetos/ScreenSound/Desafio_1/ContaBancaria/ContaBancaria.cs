@@ -1,5 +1,16 @@
 ﻿internal class Conta
 {
+    //Construtor
+    public Conta(Titular titular)
+    {
+        Random random = new Random();
+        NumeroConta = random.Next(100000, 999999);
+        Agencia = $"1-{random.Next(1000, 9999)}";
+        Titular = titular;
+        Saldo = 0.0;
+        Limite = 1000.0;
+    }
+
     //Atributos
 
     //Propriedades
@@ -12,25 +23,4 @@
     public string Informacoes => $"Titular: {Titular.Nome}\n- CPF: {Titular.Cpf}\nConta: {NumeroConta}\nAgência: {Agencia}\nSaldo: {Saldo:C}\nLimite: {Limite:C}";
 
     //Métodos
-    public void NovaConta(Titular titular)
-    {
-        Titular = titular;
-        NumeroConta = GerarNumeroConta();
-        Agencia = GerarAgencia();
-        Saldo = 0.0;
-        Limite = 1000.0;
-    }
-
-    private int GerarNumeroConta()
-    {
-        Random random = new Random();
-        return random.Next(100000, 999999);
-    }
-
-    private string GerarAgencia()
-    {
-        Random random = new Random();
-
-        return $"1-{random.Next(1000, 9999)}";
-    }
 }

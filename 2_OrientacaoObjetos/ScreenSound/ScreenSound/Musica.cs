@@ -1,11 +1,19 @@
 ﻿internal class Musica
 {
+    //Construtor
+    public Musica(Banda artista, string nome)
+    {
+        Artista = artista;
+        Nome = nome;
+    }
+
     //Propriedades
 
-    public string Nome { get; set; }
-    public string Artista { get; set; }
-    public int Duracao { get; set; }
-    public bool Disponivel { get; set; }
+    public string Nome { get; }
+    public Banda Artista { get; private set; }
+    public Genero Genero { get; set; } = new Genero();
+    public int Duracao { get; set; } = 0;
+    public bool Disponivel { get; set; } = false;
 
     public string DescricaoResumida => $"{Nome} - {Artista}";
 
@@ -14,7 +22,8 @@
     public void ExibirFichaTecnica()
     {
         Console.WriteLine($"Nome da Música: {Nome}");
-        Console.WriteLine($"Artista: {Artista}");
+        Console.WriteLine($"Artista: {Artista.Nome}");
+        Console.WriteLine($"Gênero: {Genero.Nome}");
         Console.WriteLine($"Duração(segundos): {Duracao}");
         Console.WriteLine($"Disponível: {Disponivel}");
     }
